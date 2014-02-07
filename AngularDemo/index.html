@@ -1,0 +1,115 @@
+﻿<html ng-app="PortalModule">
+<head>
+    <title>Angular demo</title>
+</head>
+<body>
+    <h1>Angular</h1>
+    <div ng-controller="PortalController">
+        <div>
+            First Name:
+                <input type="text" ng-model="firstName" /><br />
+            Last Name:
+                <input type="text" ng-model="lastName" /><br />
+            <button type="button" ng-click="addPerson()">Add</button>
+        </div>
+        <br />
+
+        <!--list current name bucket!-->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in people">
+                    <td>{{person.firstName}}</td>
+                    <td>{{person.lastName}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <ul>
+                <li><a href="#/home">Home</a></li>
+                <li><a href="#/list">List</a></li>
+            </ul>
+        </div>
+        <!--this is where the template is rendered! ui-view is the equialent ng-view...-->
+        <div ui-view>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.js"></script>
+    <script type="text/javascript" src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script> 
+       
+<!--    <script type="text/javascript" src="app/app.js"></script>    
+    <script type="text/javascript" src="app/controllers/main-controller.js"></script>    
+    <script type="text/javascript" src="app/controllers/list-controller.js"></script>    -->
+    <script type="text/javascript">
+        //#region ApplicationModule
+        var app = angular.module("PortalModule", ['ui.router', "PortalHomeModule"]);
+
+        app.service("PortalService", function ($http) {
+            this.getPorts = function () {
+                return {
+                    serverName: 'vBrick.loc',
+                    portNo: '12345'
+                };
+            }
+        });
+
+        app.config(function ($stateProvider, $urlRouterProvider) {
+            $stateProvider
+                .state("home", {
+                    url: "/home",
+                    templateUrl: "templates/home.html",
+                    controller: "PortalHomeController"
+                })
+                .state("list", {
+                    url: "/list",
+                    templateUrl: "templates/list.html",
+                    controller: "PortalListController"
+                })
+        });
+
+        app.controller("PortalController", function ($scope, PortalService) {
+            $scope.people = [];
+            
+            $scope.firsName = "";
+            $scope.lastName = "";
+
+            $scope.addPerson = function () {
+                $scope.people.push({ firstName: $scope.firstName, lastName: $scope.lastName });
+            }
+        });
+
+        angular.module("PortalHomeModule", ['ui.router'])
+        .controller("PortalHomeController", function ($scope, PortalService) {
+            $scope.people = [];
+
+            $scope.firsName = "";
+            $scope.lastName = "";
+
+            $scope.addPerson = function () {
+                $scope.people.push({ firstName: $scope.firstName, lastName: $scope.lastName });
+            }
+        })
+        .controller("PortalListController", function ($scope, PortalService) {
+            $scope.people = [];
+
+            $scope.firsName = "";
+            $scope.lastName = "";
+
+            $scope.addPerson = function () {
+                $scope.people.push({ firstName: $scope.firstName, lastName: $scope.lastName });
+            }
+        });
+        //#endregion
+    </script>
+</body>
+</html>

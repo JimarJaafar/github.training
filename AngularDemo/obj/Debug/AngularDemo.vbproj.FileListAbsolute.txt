@@ -1,0 +1,8 @@
+c:\users\jamar.jaffar.vb\documents\visual studio 2012\Projects\AngularWorld\AngularDemo\bin\AngularDemo.dll
+c:\users\jamar.jaffar.vb\documents\visual studio 2012\Projects\AngularWorld\AngularDemo\bin\AngularDemo.pdb
+c:\users\jamar.jaffar.vb\documents\visual studio 2012\Projects\AngularWorld\AngularDemo\bin\AngularDemo.xml
+c:\users\jamar.jaffar.vb\documents\visual studio 2012\Projects\AngularWorld\AngularDemo\obj\Debug\AngularDemo.Resources.resources
+c:\users\jamar.jaffar.vb\documents\visual studio 2012\Projects\AngularWorld\AngularDemo\obj\Debug\AngularDemo.vbproj.GenerateResource.Cache
+c:\users\jamar.jaffar.vb\documents\visual studio 2012\Projects\AngularWorld\AngularDemo\obj\Debug\AngularDemo.dll
+c:\users\jamar.jaffar.vb\documents\visual studio 2012\Projects\AngularWorld\AngularDemo\obj\Debug\AngularDemo.xml
+c:\users\jamar.jaffar.vb\documents\visual studio 2012\Projects\AngularWorld\AngularDemo\obj\Debug\AngularDemo.pdb
